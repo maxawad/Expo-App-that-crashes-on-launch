@@ -109,3 +109,5 @@ yarn-error.*
 *.tsbuildinfo
 
 # @end expo-cli
+# Local environment file with API keys
+.env

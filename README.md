@@ -1,30 +1,20 @@
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-<br />
 <div align="center">
-  <a>
-    <img src="assets/readme_banner.png" alt="Logo" width="100%">
-  </a>
-
-  <div style="margin-top:20px; margin-bottom:20px;">
+  <img src="assets/readme_banner.png" alt="Wallet banner" width="100%">
   <img width="100" height="100" src="assets/mascot_head.png">
-    <h1 align="center">BMO Wallet</h1>
-  </div>
-
-  <p align="center">
-    A crypto wallet built with React Native
-    <br />
-    <a>Demo coming soon</a>
-    ·
-    <a href="https://github.com/vinnyhoward/rn-crypto-wallet/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/vinnyhoward/rn-crypto-wallet/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
-  </p>
+  <h1>Expo App that crashes on launch (Redxam Wallet)</h1>
 </div>
 
-## Introduction[![](assets/pin.svg)](#introduction)
+A mobile crypto wallet built with React Native and Expo. It lets you create or import a wallet and send, receive and track test coins on Ethereum (Sepolia testnet) and Solana (Devnet). The repository name says the app crashed on launch at some point, see the status section below.
 
-BMO Wallet is a multi-chain cryptocurrency wallet built with React Native. This robust mobile application offers a comprehensive suite of features for managing digital assets across multiple blockchains, with a current focus on Ethereum and Solana networks.
+## Status
+
+Prototype, testnet only, and needs your own Alchemy API keys. This repository is a copy of the open source project [vinnyhoward/rn-crypto-wallet](https://github.com/vinnyhoward/rn-crypto-wallet) by Vince Howard (MIT license, see `LICENSE.txt`), set up under the app name "Redxam Wallet". The app has not been verified to launch in this copy. If it closes right after opening, check the troubleshooting list in the setup section.
+
+It is a native app, so it cannot be hosted as a static web demo. Do not use it with real funds.
+
+## About
+
+Redxam Wallet is a multi-chain cryptocurrency wallet built with React Native. It manages digital assets on Ethereum and Solana.
 
 ### Key Features:
 - **Multi-Chain Support**: Seamlessly manage Ethereum and Solana assets within a single, user-friendly interface.
@@ -34,29 +24,21 @@ BMO Wallet is a multi-chain cryptocurrency wallet built with React Native. This 
 - **Security**: Implements encryption and secure storage techniques to protect your digital assets.
 - **QR Code Integration**: Simplify address sharing and transaction processes with built-in QR code functionality.
 
-Leveraging the power of Expo framework and Alchemy API, BMO Wallet provides a smooth, responsive user experience while ensuring reliable blockchain interactions. Whether you're a crypto enthusiast or a developer looking to explore mobile wallet implementation, BMO Wallet offers a feature-rich platform for managing digital currencies.
+It uses the Expo framework for the app and the Alchemy API for blockchain access.
 
 ### Testnet-Only Application
-**Important**: BMO Wallet is currently designed for use with the Ethereum Sepolia testnet and Solana Devnet only. It is not intended for use with real cryptocurrencies or on mainnet networks. This testnet focus allows for safe experimentation and development without risking actual digital assets.
+**Important**: The wallet is designed for use with the Ethereum Sepolia testnet and Solana Devnet only. It is not intended for use with real cryptocurrencies or on mainnet networks. This testnet focus allows for safe experimentation and development without risking actual digital assets.
 
 #### Testnet Resources:
 - **Ethereum (Sepolia Testnet)**: Obtain free test ETH from the [Sepolia Faucet](https://www.infura.io/faucet/sepolia).
 - **Solana (Devnet)**: Acquire free test SOL from the [Solana Devnet Faucet](https://faucet.solana.com/).
 
 ### Development Focus
-BMO Wallet serves as both a functional crypto wallet and a showcase of modern mobile development practices. It demonstrates the integration of blockchain technologies with React Native, emphasizing clean code architecture, robust state management with Redux, and a strong focus on security.
+The project serves as both a functional crypto wallet and a showcase of modern mobile development practices. It demonstrates the integration of blockchain technologies with React Native, emphasizing clean code architecture, robust state management with Redux, and a strong focus on security.
 
-As I continue to evolve BMO Wallet, I'm committed to expanding its capabilities, enhancing security features, and potentially supporting additional blockchain networks in the future. This project represents my ongoing effort to create a robust, user-friendly cryptocurrency wallet that adapts to the ever-changing landscape of blockchain technology.
 
-## Table of Contents[![](assets/pin.svg)](#table-of-contents)
-- [Tech Stack](#tech-stack)
-- [Features](#features)
-- [Quick Start](#quick-start)
-- [Roadmap](#roadmap)
-- [License](#license)
-- [Contact](#contact)
 
-## Tech Stack[![](assets/pin.svg)](#tech-stack)
+## Tech Stack
 
 This project leverages a modern tech stack for building and managing a cross-platform cryptocurrency wallet application:
 
@@ -76,11 +58,10 @@ This project leverages a modern tech stack for building and managing a cross-pla
 
 * **Alchemy SDK** - A powerful toolkit that simplifies the process of making requests to the Blockchain, enhancing the app’s capability to interact with Ethereum and Solana.
 
-<div align="right">[ <a href="#introduction">↑ Back to top ↑</a> ]</div>
 
 ---
 
-## Features[![](assets/pin.svg)](#features)
+## Features
 
 ### Wallet Management
 - **Create Wallet**: Generate new wallets seamlessly.
@@ -145,77 +126,74 @@ This project leverages a modern tech stack for building and managing a cross-pla
 - **Testnet Focus**: Currently designed for testnet use only. Users are advised against using real cryptocurrency with this wallet until a full security audit is completed.
 - **Regular Updates**: The development team is committed to regular security updates and patch releases to address any discovered vulnerabilities promptly.
 
-<div align="right">[ <a href="#introduction">↑ Back to top ↑</a> ]</div>
 
 ---
 
-## Quick Start[![](assets/pin.svg)](#quick-start)
+## Quick Start
 
 ### Prerequisites
 
-Before you begin, ensure you have the following installed:
-- Node.js (v14.x or later)
-- Yarn (v1.22.x or later)
-- Expo CLI (`npm install -g expo-cli`)
+- Node.js 18 or later
+- Yarn 1.22 (the lockfile is `yarn.lock`)
+- An [Alchemy](https://www.alchemy.com/) account with an Ethereum Sepolia app and a Solana Devnet app (free)
+- For iOS: macOS with Xcode. For Android: Android Studio with an emulator or a phone with USB debugging
+- This app uses native modules (camera, biometrics, secure store) and `expo-dev-client`, so it does not run in Expo Go. You must build a development client.
 
-### Getting Started
+### Steps
 
-To get the project up and running on your local machine, follow these steps:
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/vinnyhoward/react-native-crypto-wallet.git
-cd react-native-crypto-wallet
-```
-
-2. Install dependencies:
+1. Clone the repository and install dependencies:
 
 ```bash
+git clone https://github.com/maxawad/Expo-App-that-crashes-on-launch.git
+cd Expo-App-that-crashes-on-launch
 yarn install
 ```
 
-3. Set up environment variables. Rename .env.example to .env and update the following keys with appropriate values:
+2. Create your environment file from the template and fill in your own keys:
 
 ```bash
-EXPO_PUBLIC_ALCHEMY_ETH_KEY=YOUR_ALCHEMY_KEY
-EXPO_PUBLIC_ALCHEMY_ETH_URL=https://eth-sepolia.g.alchemy.com/v2/
-EXPO_PUBLIC_ALCHEMY_SOCKET_URL=wss://eth-sepolia.g.alchemy.com/v2/
-EXPO_PUBLIC_ALCHEMY_SOL_URL=https://solana-devnet.g.alchemy.com/v2/
-EXPO_PUBLIC_ALCHEMY_SOL_API_KEY=YOUR_ALCHEMY_KEY
-EXPO_PUBLIC_ENVIRONMENT=development
-
-
+cp .env.example .env
 ```
 
-4. Start the development server:
+| Variable | Meaning |
+|---|---|
+| `EXPO_PUBLIC_ALCHEMY_ETH_KEY` | Your Alchemy API key for Ethereum Sepolia |
+| `EXPO_PUBLIC_ALCHEMY_ETH_URL` | Base URL for Ethereum requests, ends with `/v2/` |
+| `EXPO_PUBLIC_ALCHEMY_SOCKET_URL` | WebSocket base URL for live balance updates, ends with `/v2/` |
+| `EXPO_PUBLIC_ALCHEMY_SOL_URL` | Base URL for Solana Devnet requests, ends with `/v2/` |
+| `EXPO_PUBLIC_ALCHEMY_SOL_API_KEY` | Your Alchemy API key for Solana Devnet |
+| `EXPO_PUBLIC_ENVIRONMENT` | `development` for testnets, `production` switches Ethereum to mainnet |
+
+Variables starting with `EXPO_PUBLIC_` are bundled into the app, so use keys that are restricted to your own app and never reuse a key you care about.
+
+3. Build and run a development client on a device or emulator:
 
 ```bash
-expo start
+yarn ios       # or: yarn android
 ```
 
-### Environment Variables
+4. For later sessions, start the dev server and open the installed development client:
 
-`EXPO_PUBLIC_ALCHEMY_ETH_KEY`: Your Alchemy API key for accessing Ethereum blockchain data.
+```bash
+yarn start
+```
 
-`EXPO_PUBLIC_ALCHEMY_ETH_URL`: The base URL for Ethereum Alchemy API requests.
+### Troubleshooting a crash on launch
 
-`EXPO_PUBLIC_ALCHEMY_SOCKET_URL`: The WebSocket URL for real-time updates from Alchemy.
+- Make sure `.env` exists and every variable is filled in. The Ethereum and Solana services are created as soon as the app loads, so a missing or malformed URL or key fails at startup.
+- Restart Metro with a clean cache after changing `.env`: `yarn start --clear`.
+- Run the app in a development client (`yarn ios` or `yarn android`), not in Expo Go.
+- Run `yarn install` again if native modules were added or upgraded, then rebuild the client.
 
-`EXPO_PUBLIC_ALCHEMY_SOL_URL`: The base URL for Solana Alchemy API requests.
+### Tests
 
-`EXPO_PUBLIC_ALCHEMY_SOL_API_KEY`: Your Alchemy API key for accessing Solana blockchain data.
+```bash
+yarn test
+```
 
-`EXPO_PUBLIC_ENVIRONMENT`: Environment setting, e.g., development or production.
+## Roadmap 
 
-
-<div align="right">[ <a href="#introduction">↑ Back to top ↑</a> ]</div>
-
----
-
-## Roadmap [![](assets/pin.svg)](#roadmap)
-
-BMO Wallet is continuously evolving. Here's our exciting roadmap for future developments:
+The wallet is continuously evolving. Here is the roadmap from the original project for future developments:
 
 ### Near Term Goals
 
@@ -259,44 +237,27 @@ BMO Wallet is continuously evolving. Here's our exciting roadmap for future deve
 
 This roadmap is a living document and will evolve based on technological advancements, user feedback, and market trends.
 
-Your feedback and suggestions are always welcome as I continue to improve and expand BMO Wallet!
-
-<div align="right">[ <a href="#introduction">↑ Back to top ↑</a> ]</div>
+Your feedback and suggestions are always welcome as I continue to improve and expand the wallet!
 
 ---
 
-## License [![](assets/pin.svg)](#license)
+## License 
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
 
-<div align="right">[ <a href="#introduction">↑ Back to top ↑</a> ]</div>
-
 ---
 
-## Contact [![](assets/pin.svg)](#contact)
+## Credits
 
-Vincent Howard - [@NiftyDeveloper](https://twitter.com/NiftyDeveloper) - vincenguyenhoward@gmail.com
-
-Project Link: [https://github.com/vinnyhoward/rn-crypto-wallet](https://github.com/vinnyhoward/rn-crypto-wallet)
-
-<div align="right">[ <a href="#introduction">↑ Back to top ↑</a> ]</div>
-
----
-
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://www.linkedin.com/in/vinnyhoward/
+Original project: [vinnyhoward/rn-crypto-wallet](https://github.com/vinnyhoward/rn-crypto-wallet) by Vince Howard. Released under the MIT License. A license file for the original work is in `LICENSE.txt`.
 
 [typescript]: https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white
 [ts-url]: https://www.typescriptlang.org/
-
 [react-native]: https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB
 [rn-url]: https://reactnative.dev/
-
 [expo]: https://img.shields.io/badge/expo-1C1E24?style=for-the-badge&logo=expo&logoColor=#D04A37
 [expo-url]: https://docs.expo.dev/
-
 [styled-components]: https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white
 [sc-url]: https://styled-components.com/
-
 [redux]: https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white
-[redux-url]: https://styled-components.com/
+[redux-url]: https://redux.js.org/
